@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is initially visible.
+  </div>
+
+  <script>
+    //Bug: Incorrectly using innerHTML to replace content
+    document.getElementById("myDiv").innerHTML = null; 
+
+    setTimeout(function() {
+      document.getElementById("myDiv").innerHTML = "This text should reappear, but it doesn't.";
+    }, 3000); 
+  </script>
+</body>
+</html>
