@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is initially visible.
+  </div>
+
+  <script>
+    // Solution: Use an empty string instead of null
+    document.getElementById("myDiv").innerHTML = ""; 
+
+    setTimeout(function() {
+      document.getElementById("myDiv").innerHTML = "This text reappears correctly.";
+    }, 3000); 
+  </script>
+</body>
+</html>
